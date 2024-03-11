@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function ItemCard({ data }) {
   const navigate = useNavigate();
   const handleOrderPage = () => {
-    navigate("/order", {
+    navigate(`/order/${data.id}`, {
       state: data,
     });
   };

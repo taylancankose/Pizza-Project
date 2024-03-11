@@ -23,6 +23,16 @@ export default {
       width: {
         136: "500px",
       },
+      keyframes: {
+        fadeOut: {
+          "0%": { opacity: 1 },
+          "50%": { opacity: 0.4 },
+          "100%": { opacity: 0 },
+        },
+      },
+      animation: {
+        "fade-out": "fadeOut 2s linear",
+      },
     },
   },
   plugins: [],

@@ -14,17 +14,25 @@ function InputForm({
         {labelTitle}
       </label>
       {type === "input" ? (
-        <input
-          name={name}
-          data-cy="name-input"
-          value={value}
-          onChange={handleChange}
-          placeholder={placeholder}
-          className="my-6 bg-myBeige w-full p-3 rounded-md
-      placeholder:text-sm 
-      placeholder:text-myDarkGray
-      placeholder:p-2"
-        />
+        <>
+          <input
+            name={name}
+            data-cy="name-input"
+            value={value}
+            onChange={handleChange}
+            placeholder={placeholder}
+            className={`my-6 w-full p-3 rounded-md placeholder:text-sm 
+            placeholder:text-myDarkGray placeholder:p-2
+            ${
+              value.length < 4 ? "border border-myRed bg-red-100" : "bg-myBeige"
+            } `}
+          />
+          {value.length < 4 && (
+            <p className={`mb-4 font-extrabold font-barlow text-myRed`}>
+              En az 3 karakter girmelisiniz.
+            </p>
+          )}
+        </>
       ) : (
         type === "text-area" && (
           <textarea

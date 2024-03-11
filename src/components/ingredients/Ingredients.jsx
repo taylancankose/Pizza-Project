@@ -1,6 +1,6 @@
 import React from "react";
 
-function Ingredients({ handleSelectIngredient }) {
+function Ingredients({ handleSelectIngredient, ingredients }) {
   const malzemeler = [
     "Pepperoni",
     "Domates",
@@ -42,6 +42,15 @@ function Ingredients({ handleSelectIngredient }) {
           </label>
         ))}
       </div>
+      {ingredients.length < 4 ? (
+        <p className="mt-6 font-extrabold font-barlow text-myRed">
+          En az 4 malzeme seçmelisiniz.
+        </p>
+      ) : ingredients.length > 10 ? (
+        <p className="mt-6 font-extrabold font-barlow text-myRed">
+          En fazla 10 malzeme seçebilirsiniz.
+        </p>
+      ) : null}
     </div>
   );
 }

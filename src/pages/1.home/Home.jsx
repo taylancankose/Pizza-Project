@@ -12,7 +12,7 @@ function Home() {
   const [active, setActive] = useState("Pizza");
 
   const handleOrder = () => {
-    navigate("/order", {
+    navigate("/order/1", {
       state: pizzaData[1],
     });
   };

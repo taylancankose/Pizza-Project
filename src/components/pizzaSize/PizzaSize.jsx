@@ -4,7 +4,8 @@ function PizzaSize({ handleSelectSize, orderDetails }) {
   return (
     <div>
       <p className="text-xl text-myDarkGray font-semibold">
-        Boyut Seç<span className="text-myRed">*</span>
+        Boyut Seç
+        {orderDetails ? null : <span className="text-myRed">*</span>}
       </p>
       <div className="flex mt-5">
         <label>
@@ -12,7 +13,7 @@ function PizzaSize({ handleSelectSize, orderDetails }) {
             name="boyut"
             value="s"
             className={`mr-4 mb-4 rounded-full h-14 w-14 font-barlow font-medium ${
-              orderDetails?.size === "s" ? "bg-myYellow " : "bg-myBeige "
+              orderDetails === "s" ? "bg-myYellow " : "bg-myBeige "
             }`}
             onClick={handleSelectSize}
           >
@@ -25,7 +26,7 @@ function PizzaSize({ handleSelectSize, orderDetails }) {
             name="boyut"
             value="m"
             className={`mr-4 mb-4 rounded-full h-14 w-14 font-barlow font-medium ${
-              orderDetails?.size === "m" ? "bg-myYellow " : "bg-myBeige "
+              orderDetails === "m" ? "bg-myYellow " : "bg-myBeige "
             }`}
             onClick={handleSelectSize}
           >
@@ -37,7 +38,7 @@ function PizzaSize({ handleSelectSize, orderDetails }) {
             name="boyut"
             value="l"
             className={`mr-4 mb-4 rounded-full h-14 w-14 font-barlow font-medium ${
-              orderDetails?.size === "l" ? "bg-myYellow " : "bg-myBeige "
+              orderDetails === "l" ? "bg-myYellow " : "bg-myBeige "
             }`}
             onClick={handleSelectSize}
           >

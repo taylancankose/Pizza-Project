@@ -185,16 +185,22 @@ function Order() {
             {/* Boyut */}
             <PizzaSize
               handleSelectSize={handleChange}
-              orderDetails={orderDetails}
+              orderDetails={orderDetails.size}
             />
             {/* Hamur */}
             {orderDetails.type === "Pizza" && (
-              <DoughSize handleSelectDoughSize={handleChange} />
+              <DoughSize
+                doughSize={orderDetails.doughSize}
+                handleSelectDoughSize={handleChange}
+              />
             )}
           </div>
 
           {/* Malzemeler */}
-          <Ingredients handleSelectIngredient={handleChange} />
+          <Ingredients
+            ingredients={orderDetails.ingredients}
+            handleSelectIngredient={handleChange}
+          />
 
           {/* Adım */}
           <InputForm

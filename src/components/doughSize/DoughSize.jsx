@@ -1,10 +1,10 @@
 import React from "react";
 
-function DoughSize({ handleSelectDoughSize }) {
+function DoughSize({ handleSelectDoughSize, doughSize }) {
   return (
     <div>
       <p className="text-xl text-myDarkGray font-semibold">
-        Hamur Seç<span className="text-myRed">*</span>
+        Hamur Seç {doughSize ? null : <span className="text-myRed">*</span>}
       </p>
       <select
         name="hamur"
