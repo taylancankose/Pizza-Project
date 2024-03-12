@@ -6,6 +6,7 @@ import Pill from "../../components/pill/Pill";
 import ItemCard from "../../components/itemCard/ItemCard";
 import Footer from "../../components/footer/Footer";
 import { barElements, pizzaData } from "../../assets/data";
+import { motion } from "framer-motion";
 
 function Home() {
   const navigate = useNavigate();
@@ -26,13 +27,21 @@ function Home() {
   };
 
   return (
-    <div className="bg-myBeige">
+    <motion.div
+      className="bg-myBeige"
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        opacity: 0,
+      }}
+    >
       <div>
         {/* First Page */}
-        <div
-          className="h-screen justify-center flex text-center
-    bg-[url('../../../Assets/mile1-assets/home-banner.png')]"
-        >
+        <div className="h-screen flex justify-center text-center bg-center bg-cover w-full  bg-[url('../../../Assets/mile1-assets/home-banner.png')]">
           <div className="mt-32">
             <img
               className="mb-16 m-auto"
@@ -50,6 +59,7 @@ function Home() {
                 data-cy="hungry-btn"
                 onClick={handleOrder}
                 className="bg-myYellow py-3 px-14 rounded-full text-black font-medium font-roboto"
+                aria-label="ACIKTIM"
               >
                 ACIKTIM
               </button>
@@ -139,7 +149,7 @@ function Home() {
       </div>
 
       <Footer />
-    </div>
+    </motion.div>
   );
 }
 
