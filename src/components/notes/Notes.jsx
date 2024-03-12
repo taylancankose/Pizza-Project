@@ -8,8 +8,10 @@ function Notes({ data }) {
       </p>
       <p>
         Malzemeler:{" "}
-        {data.ingredients.map((item) => (
-          <span className="font-bold">{item}, </span>
+        {data.ingredients.map((item, i) => (
+          <span key={i} className="font-bold">
+            {item},{" "}
+          </span>
         ))}
       </p>
       <p>

@@ -52,7 +52,7 @@ function Home() {
               <p className="font-satisfy text-3xl text-myYellow font-light ">
                 fırsatı kaçırma
               </p>
-              <p className="font-specimen text-6xl text-white font-light mb-10">
+              <p className="font-specimen md:text-6xl text-4xl mt-2 text-white font-light mb-10">
                 KOD ACIKTIRIR <br /> PIZZA, DOYURUR
               </p>
               <button
@@ -74,7 +74,7 @@ function Home() {
         <div className="p-20 justify-evenly md:flex ">
           {/* SOL */}
           <Card
-            className="w-full xl:w-5/12 lg:w-3/6 md:w-4/6 bg-no-repeat rounded-xl bg-cover bg-red-100 bg-[url('../../../Assets/mile2-aseets/cta/kart-1.png')] p-10 "
+            className="w-full xl:w-5/12 lg:w-3/6 md:w-4/6 bg-no-repeat rounded-xl bg-cover bg-center bg-red-100 bg-[url('../../../Assets/mile2-aseets/cta/kart-1.png')] p-10 "
             btnClass={
               "md:py-4 md:px-6 p-2 rounded-full text-myRed font-semibold font-barlow bg-white mt-6"
             }
@@ -91,7 +91,7 @@ function Home() {
           {/* SAĞ */}
           <div className="lg:w-5/12 mt-5 md:mt-0">
             <Card
-              className="bg-no-repeat bg-[url('../../../Assets/mile2-aseets/cta/kart-2.png')] p-10 mb-10 rounded-xl bg-cover"
+              className="bg-no-repeat bg-[url('../../../Assets/mile2-aseets/cta/kart-2.png')] p-10 mb-10 rounded-xl bg-cover bg-center"
               btnClass={
                 "lg:py-4 lg:px-6 p-2 rounded-full text-myRed font-semibold font-barlow bg-white mt-6"
               }
@@ -102,7 +102,7 @@ function Home() {
               </p>
             </Card>
             <Card
-              className="bg-no-repeat bg-[url('../../../Assets/mile2-aseets/cta/kart-3.png')] p-10 rounded-xl bg-cover"
+              className="bg-no-repeat bg-[url('../../../Assets/mile2-aseets/cta/kart-3.png')] p-10 rounded-xl bg-cover bg-center"
               btnClass={
                 "lg:py-4 lg:px-6 p-2 rounded-full text-myRed font-semibold font-barlow bg-white mt-6"
               }
@@ -127,7 +127,7 @@ function Home() {
             </p>
           </div>
           {/* Pills */}
-          <div className="px-40 flex flex-wrap justify-between mb-10">
+          <div className="md:px-30 xl:px-40 flex items-center justify-center flex-wrap mb-10">
             {barElements.map((item, i) => (
               <Pill
                 item={item}

@@ -26,43 +26,39 @@ function MapView() {
     };
     getPosition();
   }, []);
-  const DynamicDirections = () => (
-    <Directions
-      location={location}
-      routes={routes}
-      setRoutes={setRoutes}
-      origin={origin}
-      setOrigin={setOrigin}
-    />
-  );
+
   useEffect(() => {
     setTimeout(() => {
       setOrigin(location);
     }, 30000);
-
-    return DynamicDirections;
   }, [location]);
 
   return (
-    <div>
+    <div className="justify-center items-center m-auto flex flex-col mt-20">
       <APIProvider apiKey={import.meta.env.VITE_APP_GOOGLE_MAPS_API_KEY}>
-        <Map className="md:h-124 md:w-136 h-72 w-6/6" defaultCenter={location}>
-          <DynamicDirections />
+        <Map className="md:h-124 md:w-5/6 h-72 w-72" defaultCenter={location}>
+          <Directions
+            location={location}
+            routes={routes}
+            setRoutes={setRoutes}
+            origin={origin}
+            setOrigin={setOrigin}
+          />
         </Map>
       </APIProvider>
 
-      <div className="p-10 border-white border mt-10 rounded-lg">
+      <div className="p-10 border-myRed border mt-10 rounded-lg">
         {routes?.distance?.text !== "1 m" ? (
           <>
-            <p className="text-white font-barlow font-semibold text-lg">
+            <p className="text-myDark font-barlow font-semibold text-lg">
               Mesafe: {routes?.distance?.text}
             </p>
-            <p className="text-white font-barlow font-semibold text-lg mt-2">
+            <p className="text-myDark font-barlow font-semibold text-lg mt-2">
               Tahmini Varış Süresi: {routes?.duration?.text}
             </p>
           </>
         ) : (
-          <p className="text-white font-barlow font-semibold text-lg text-center">
+          <p className="text-myDark font-barlow font-semibold text-lg text-center">
             ✨ Siparişiniz teslim edildi ✨
           </p>
         )}

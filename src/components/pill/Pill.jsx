@@ -1,12 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function Pill({ active, item, handleSelect }) {
   return (
-    <button
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 1 }}
       value={item.title}
-      className={`flex w-48 mb-6 items-center justify-center p-4 mx-5 rounded-full ${
-        active === item.title ? "bg-myDarkGray" : "bg-white"
-      }`}
+      className={`flex mb-6 items-center justify-center md:w-48 md:p-4 mx-5 md:rounded-full w-52 h-16 rounded-full
+      ${active === item.title ? "bg-myDarkGray" : "bg-white"}`}
       key={item.id}
       name={item.title}
       onClick={() => handleSelect(item.title)}
@@ -20,7 +22,7 @@ function Pill({ active, item, handleSelect }) {
       >
         {item.title}
       </p>
-    </button>
+    </motion.button>
   );
 }
 

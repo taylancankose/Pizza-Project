@@ -4,7 +4,7 @@ import { products } from "../../assets/data";
 
 function MenuBar() {
   return (
-    <div className=" bg-white flex p-4 flex-wrap lg:items-center xl:justify-center xl:flex-nowrap">
+    <div className=" bg-white flex p-4 flex-wrap items-center justify-between xl:justify-center xl:flex-wrap md:justify-start">
       {products.map((element) => (
         <div
           key={element.id}

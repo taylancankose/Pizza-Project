@@ -171,8 +171,11 @@ function Order() {
         <div className="mx-auto xl:w-4/12 md:w-8/12">
           <img src="../../../Assets/mile2-aseets/pictures/form-banner.png" />
           <nav className="flex gap-1 mt-4 text-myLightGray font-medium py-10">
-            <Link to={"/"}>Anasayfa -</Link>
-            <Link className="font-bold text-myRed">Sipariş Oluştur</Link>
+            <Link to={"/"}>Anasayfa</Link>
+            <span>-</span>
+            <Link className="font-bold text-myRed pointer-events-none">
+              Sipariş Oluştur
+            </Link>
           </nav>
           <Details orderDetails={orderDetails} data={data} />
         </div>
